@@ -1,0 +1,20 @@
+<a 
+        style="cursor: pointer;"
+        [routerLink]="[index]" 
+        routerLinkActive="active"
+        class="list-group-item clearfix">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+                <p class="list-group-item-text">{{ recipe.description }}</p>
+            </div>
+            <span class="pull-right">
+                <!--Two ways to use src in the below one is -> you can either use string interpolation here
+                 to output recipe imagePath here or as an altenative , you cannot use the attribute plus string
+                interpolation but u could bind to the source property itself. And the below src="{{ recipe.imagePath }}" this also works-->
+                <img 
+                [src]="recipe.imagePath" 
+                alt="{{ recipe.name }}" 
+                class="img-responsive" 
+                style="max-height: 50px;">
+            </span>
+</a>
